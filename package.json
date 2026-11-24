@@ -1,0 +1,62 @@
+{
+  "name": "dsh-memory-star-map",
+  "version": "0.4.0",
+  "description": "记忆星图 —— 把记忆渲染成可交互的星空：二十八宿为球壳锚点，每条记忆点亮一颗星，流星划过深空。",
+  "type": "module",
+  "main": "./index.js",
+  "icon": "./icon.svg",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "memory",
+    "star-map",
+    "visualization"
+  ],
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "package.json",
+    "locale/zh.json",
+    "locale/en.json",
+    "README.md",
+    "README.zh.md"
+  ],
+  "engines": {
+    "node": ">=22.12.0",
+    "dsh": ">=0.2.2-rc.3"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "compatibility": {
+      "dshReleases": {
+        "0.2.2-rc.3": "compatible",
+        "0.2.2-rc.4": "compatible",
+        "0.2.2-rc.5": "compatible"
+      }
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.4",
+    "@deepseek-ai/dsh-client-connection": "*",
+    "@deepseek-ai/dsh-client-ui-primitives": "*",
+    "@deepseek-ai/dsh-client-ui-slots": "*",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
